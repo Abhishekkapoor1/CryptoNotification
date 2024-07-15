@@ -8,12 +8,13 @@ import jakarta.persistence.Id;
 public class Notification {
     @GeneratedValue
     @Id
-    int id;
-    Currency currency;
-    double price;
-    double highPrice;
-    long volume;
-    long marketCap;
+    private int id;
+    private Currency currency;
+    private double price;
+    private double highPrice;
+    private long volume;
+    private long marketCap;
+    private NotificationStatus notificationStatus;
 
     public Notification() {
     }
@@ -64,5 +65,21 @@ public class Notification {
 
     public void setMarketCap(long marketCap) {
         this.marketCap = marketCap;
+    }
+
+    public NotificationStatus getNotificationStatus() {
+        return notificationStatus;
+    }
+
+    public void setNotificationStatus(NotificationStatus notificationStatus) {
+        this.notificationStatus = notificationStatus;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
